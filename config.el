@@ -124,7 +124,7 @@
 
 (map! :desc "Backward kill word"
       :map paredit-mode-map
-      :i "<delete>" 'paredit-backward-kill-word)
+      :i "M-<backspace>" 'paredit-backward-kill-word)
 
 ;;; cider
 
