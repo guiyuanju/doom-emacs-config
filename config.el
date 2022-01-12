@@ -92,6 +92,12 @@
 
 ;;; paredit
 
+(after! clojure-mode
+  (enable-paredit-mode))
+
+(after! clojurescript-mode
+  (enable-paredit-mode))
+
 (map! :map paredit-mode-map
       :desc "Splice secp kill backward"
       :nvi "<prior>" 'paredit-splice-sexp-killing-backward)
