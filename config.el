@@ -82,6 +82,44 @@
 (map! :desc "Move to the end of a line in all modes"
       :nvi "C-e" 'doom/forward-to-last-non-comment-or-eol)
 
+;;; Editing
+
+(map! :desc "Substitute"
+      :v "s" 'evil-substitute)
+
+(map! :desc "kill-line"
+      :nvi "C-k" 'kill-line)
+
+;;; paredit
+
+(map! :map paredit-mode-map
+      :desc "Splice secp kill backward"
+      :nvi "<prior>" 'paredit-splice-sexp-killing-backward)
+
+(map! :desc "Splice secp kill forward"
+      :map paredit-mode-map
+      :nvi "<next>" 'paredit-splice-sexp-killing-forward)
+
+(map! :desc "Structurally kill line"
+      :map paredit-mode-map
+      :nvi "C-k" 'paredit-kill)
+
+(map! :desc "Forward delete"
+      :map paredit-mode-map
+      :i "C-d" 'paredit-forward-delete)
+
+(map! :desc "Forward kill word"
+      :map paredit-mode-map
+      :i "M-d" 'paredit-forward-kill-word)
+
+(map! :desc "Backward delete"
+      :map paredit-mode-map
+      :i "<backspace>" 'paredit-backward-delete)
+
+(map! :desc "Backward kill word"
+      :map paredit-mode-map
+      :i "<delete>" 'paredit-backward-kill-word)
+
 ;;; cider
 
 (use-package! cider
