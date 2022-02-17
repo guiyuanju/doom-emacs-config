@@ -22,8 +22,9 @@
 ;; (setq doom-font (font-spec :family "fantasque sans mono" :size 16 :weight 'regular)
 ;;       doom-variable-pitch-font (font-spec :family "ETBembo" :size 17))
 
-(setq doom-font (font-spec :family "fira code" :size 16 :weight 'regular)
-      doom-variable-pitch-font (font-spec :family "ETBembo" :size 17))
+(setq doom-font (font-spec :family "fira code" :size 30 :weight 'regular)
+      doom-variable-pitch-font (font-spec :family "fira code" :size 30))
+      ;; doom-variable-pitch-font (font-spec :family "ETBembo" :size 17))
 
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
@@ -159,3 +160,30 @@
 (defun cider-pprint-eval-sexp-up-to-point ()
   (interactive)
   (cider-eval-sexp-up-to-point 't))
+
+;;; tab
+
+(map! :map centaur-tabs-mode-map
+      :desc "tab shortcuts"
+      :nvi "C-<tab>" 'centaur-tabs-forward)
+
+(map! :map centaur-tabs-mode-map
+      :desc "tab shortcuts"
+      :nvi "s-h" 'centaur-tabs-backward)
+
+(map! :map centaur-tabs-mode-map
+      :desc "tab shortcuts"
+      :nvi "s-l" 'centaur-tabs-forward)
+
+;;; Promela mode
+
+(use-package! promela-mode
+  :mode ("\\.pml\\'" . promela-mode)
+  :custom
+  (promela-block-indent 2)
+  (promela-auto-match-delimiter nil))
+
+;;; Alloy mode
+
+(use-package! alloy-mode
+  :mode ("\\.als\\'" . alloy-mode))
