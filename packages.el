@@ -48,3 +48,11 @@
 ;(unpin! pinned-package another-pinned-package)
 ;; ...Or *all* packages (NOT RECOMMENDED; will likely break things)
 ;(unpin! t)
+
+(package! promela-mode
+  :recipe (:host github :repo "rudi/promela-mode"
+           :files ("promela-mode.el")))
+
+(package! alloy-mode
+  :recipe (:host github :repo "dwwmmn/alloy-mode"
+           :files ("alloy-mode.el")))
